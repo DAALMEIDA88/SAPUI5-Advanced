@@ -10,6 +10,20 @@ sap.ui.define([
         return Controller.extend("logaligroup.employees.controller.MainView", {
             onInit: function () {
 
+            },
+
+            onValidate: function () {
+                var inputEmpployee = this.byId("inputEmployee");
+                var valueEmployee = inputEmpployee.getValue();
+
+                if (valueEmployee.length === 6) {
+                    //inputEmpployee.setDescription("OK");
+                    this.byId("labelCountry").setVisible(true);
+                    this.byId("slCountry").setVisible(true);
+                } else {
+                    this.byId("labelCountry").setVisible(false);
+                    this.byId("slCountry").setVisible(false);
+                }
             }
         });
     });
