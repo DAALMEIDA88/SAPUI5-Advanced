@@ -1,0 +1,40 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
+    <Dialog id="D1" title="{i18n>orders}" >
+        <content>
+            <Table id="D1_Tab1" items="{odataNorthwind>/Orders}">
+                    <columns>
+                        <Column id="D1_Column1">
+                            <header>
+                            <Label id="D1_Label1" text="{i18n>orderID}"/>
+                            </header>
+                        </Column>
+
+                        <Column id="D1_Column2">
+                            <header>
+                            <Label id="D1_Label2" text="{i18n>freight}"/>
+                            </header>
+                        </Column>
+
+                        <Column id="D1_Column3">
+                            <header>
+                            <Label id="D1_Label3" text="{i18n>shipAddress}"/>
+                            </header>
+                        </Column>                                        
+                    </columns> 
+
+                    <items>
+                        <ColumnListItem id="D1_ColumnListItem1" >
+                            <cells>
+                                <Label id="D1_Label5" text="{odataNorthwind>OrderID}"/>
+                                <Label id="D1_Label6" text="{odataNorthwind>Freight}"/>
+                                <Label id="D1_Label7" text="{odataNorthwind>ShipAddress}"/>
+                            </cells>
+                        </ColumnListItem>
+                    </items>                                                     
+            </Table>
+        </content>
+        <endButton>
+            <Button id="D1_Btn1" text="{i18n>closeDialog}" press="onCloseOrders"></Button>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
